@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.kanlulu.kotlin01.companion.TestCompanion
 import com.kanlulu.kotlin01.extendfun.TestExtend
 
 class MainActivity : AppCompatActivity() {
@@ -63,5 +64,10 @@ class MainActivity : AppCompatActivity() {
     }
     /***************高阶函数 end******************/
 
-
+    /**
+     * 伴生对象
+     */
+    fun companionTest(view: View) {
+        if (TestCompanion.isEmpty("")) Toast.makeText(this,"伴生对象！！！",Toast.LENGTH_SHORT).show()
+    }
 }
