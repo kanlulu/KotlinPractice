@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.kanlulu.kotlin01.companion.TestCompanion
 import com.kanlulu.kotlin01.extendfun.TestExtend
+import com.kanlulu.kotlin01.loop.TestKotlinLoop
 import com.kanlulu.kotlin01.operator.TestOperator
 
 class MainActivity : AppCompatActivity() {
@@ -79,6 +80,18 @@ class MainActivity : AppCompatActivity() {
         val testOperator = TestOperator()
 //        testOperator.test01(this)
         testOperator.test02(this)
+    }
+
+    /**
+     * 循环
+     */
+    fun testLoop(view: View) {
+        val testLoop = TestKotlinLoop(this)
+//        testLoop.test01()
+//        testLoop.test02()
+//        testLoop.test03()
+//        testLoop.test04()
+        testLoop.test05()
     }
 
 }

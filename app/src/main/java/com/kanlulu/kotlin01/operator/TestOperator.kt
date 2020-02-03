@@ -7,6 +7,7 @@ import android.widget.Toast
 /**
  * author:kanlulu
  * data  :2020-02-03 16:58
+ * 解构：Kotlin中允许将一个类拆解分别赋值
  **/
 class TestOperator {
 
