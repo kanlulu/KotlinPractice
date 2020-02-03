@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.kanlulu.kotlin01.companion.TestCompanion
 import com.kanlulu.kotlin01.extendfun.TestExtend
+import com.kanlulu.kotlin01.operator.TestOperator
 
 class MainActivity : AppCompatActivity() {
     var age:Int = 18
@@ -70,4 +71,14 @@ class MainActivity : AppCompatActivity() {
     fun companionTest(view: View) {
         if (TestCompanion.isEmpty("")) Toast.makeText(this,"伴生对象！！！",Toast.LENGTH_SHORT).show()
     }
+
+    /**
+     * 解构
+     */
+    fun jiegou(view: View) {
+        val testOperator = TestOperator()
+//        testOperator.test01(this)
+        testOperator.test02(this)
+    }
+
 }
