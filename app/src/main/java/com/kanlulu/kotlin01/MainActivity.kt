@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     /***************高阶函数 start******************/
     /**
      * 高阶函数
-     * 函数的入参书函数(lambda)
+     * 函数的入参是函数(lambda)
      */
     fun testHighFunc(view: View) {
         testHighFunc01(true,testLambda)
@@ -53,8 +53,10 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * 高阶函数
+     * inline关键字 减少创建不必要的对象
+     * 过度的使用增加编译器的编译负担，代码块变得庞大；因此我们通常只在高阶函数时使用
      */
-    private fun testHighFunc01(isShow: Boolean,testLambda: (String) -> Unit){
+    private inline fun testHighFunc01(isShow: Boolean,testLambda: (String) -> Unit){
         if (isShow) {
             testLambda("高阶函数")
         }
