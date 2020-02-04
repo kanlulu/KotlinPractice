@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.kanlulu.kotlin01.companion.TestCompanion
-import com.kanlulu.kotlin01.extendfun.TestExtend
+import com.kanlulu.kotlin01.extendfunc.TestExtend
 import com.kanlulu.kotlin01.list.TestKotlinList
 import com.kanlulu.kotlin01.loop.TestKotlinLoop
 import com.kanlulu.kotlin01.operator.TestOperator
+import com.kanlulu.kotlin01.scopefunc.TestScopeFunc
 
 class MainActivity : AppCompatActivity() {
     var age:Int = 18
@@ -103,6 +104,14 @@ class MainActivity : AppCompatActivity() {
 
 //        listOperate.test01()
         listOperate.test02()
+    }
+
+    /**
+     * 作用域函数
+     */
+    fun testScopeFunc(view: View) {
+        val scopeFunc = TestScopeFunc(this)
+        scopeFunc.test01()
     }
 
 }

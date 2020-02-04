@@ -1,4 +1,4 @@
-package com.kanlulu.kotlin01.extendfun
+package com.kanlulu.kotlin01.extendfunc
 
 /**
  * author:kanlulu
