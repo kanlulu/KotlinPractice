@@ -10,6 +10,7 @@ import com.kanlulu.kotlin01.extendfunc.TestExtend
 import com.kanlulu.kotlin01.list.TestKotlinList
 import com.kanlulu.kotlin01.loop.TestKotlinLoop
 import com.kanlulu.kotlin01.operator.TestOperator
+import com.kanlulu.kotlin01.operatoroverride.TestOperatorOverride
 import com.kanlulu.kotlin01.scopefunc.TestScopeFunc
 
 class MainActivity : AppCompatActivity() {
@@ -112,6 +113,14 @@ class MainActivity : AppCompatActivity() {
     fun testScopeFunc(view: View) {
         val scopeFunc = TestScopeFunc(this)
         scopeFunc.test01()
+    }
+
+    /**
+     * 运算符重载
+     */
+    fun testOperatorOverride(view: View) {
+        val operatorOverride= TestOperatorOverride(this)
+        operatorOverride.test01()
     }
 
 }

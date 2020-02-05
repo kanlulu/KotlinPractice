@@ -96,4 +96,16 @@
         android:textAllCaps="false"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="2dp"
+        android:text="运算符重载"
+        android:textAllCaps="false"
+        android:onClick="testOperatorOverride"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
