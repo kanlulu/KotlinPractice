@@ -12,18 +12,21 @@ import com.kanlulu.kotlin01.loop.TestKotlinLoop
 import com.kanlulu.kotlin01.operator.TestOperator
 import com.kanlulu.kotlin01.operatoroverride.TestOperatorOverride
 import com.kanlulu.kotlin01.scopefunc.TestScopeFunc
+import com.kanlulu.kotlin01.varvalue.TestVarValue
 
 class MainActivity : AppCompatActivity() {
-    var age:Int = 18
-    var name:String = "kan lulu"
-    var name2:String? = null
+    var age: Int = 18
+    var name: String = "kan lulu"
+    var name2: String? = null
 
     //扩展函数
-    private fun TestExtend.testExtend(string: String, context: Context)= Toast.makeText(context,string,Toast.LENGTH_SHORT).show()
+    private fun TestExtend.testExtend(string: String, context: Context) =
+        Toast.makeText(context, string, Toast.LENGTH_SHORT).show()
 
     //闭包声明（申明函数对象）  上面这个是下面的完整写法
 //    val testLambda : (String)->Unit = {name:String -> Toast.makeText(this,name,Toast.LENGTH_SHORT).show()}
-    private val testLambda = {name:String -> Toast.makeText(this,name,Toast.LENGTH_SHORT).show()}
+    private val testLambda =
+        { name: String -> Toast.makeText(this, name, Toast.LENGTH_SHORT).show() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +39,7 @@ class MainActivity : AppCompatActivity() {
      * JvmStatic
      */
     fun showToast(view: View) {
-        Utils.Test.message("kotlin 单例/匿名内部类",this)
+        Utils.Test.message("kotlin 单例/匿名内部类", this)
     }
 
     /**
@@ -45,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     fun extendFunc(view: View) {
 //        fun TestExtend.testExtend(string: String, context: Context)= Toast.makeText(context,string,Toast.LENGTH_SHORT).show()
         val testExtend = TestExtend()
-        testExtend.testExtend("扩展函数",this)
+        testExtend.testExtend("扩展函数", this)
     }
 
     /***************高阶函数 start******************/
@@ -54,7 +57,7 @@ class MainActivity : AppCompatActivity() {
      * 函数的入参是函数(lambda)
      */
     fun testHighFunc(view: View) {
-        testHighFunc01(true,testLambda)
+        testHighFunc01(true, testLambda)
     }
 
     /**
@@ -62,7 +65,7 @@ class MainActivity : AppCompatActivity() {
      * inline关键字 减少创建不必要的对象
      * 过度的使用增加编译器的编译负担，代码块变得庞大；因此我们通常只在高阶函数时使用
      */
-    private inline fun testHighFunc01(isShow: Boolean,testLambda: (String) -> Unit){
+    private inline fun testHighFunc01(isShow: Boolean, testLambda: (String) -> Unit) {
         if (isShow) {
             testLambda("高阶函数")
         }
@@ -73,7 +76,7 @@ class MainActivity : AppCompatActivity() {
      * 伴生对象
      */
     fun companionTest(view: View) {
-        if (TestCompanion.isEmpty("")) Toast.makeText(this,"伴生对象！！！",Toast.LENGTH_SHORT).show()
+        if (TestCompanion.isEmpty("")) Toast.makeText(this, "伴生对象！！！", Toast.LENGTH_SHORT).show()
     }
 
     /**
@@ -116,11 +119,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * 运算符重载
+     * 运算符重载  中缀表达式
      */
     fun testOperatorOverride(view: View) {
-        val operatorOverride= TestOperatorOverride(this)
-        operatorOverride.test01()
+//        val operatorOverride = TestOperatorOverride(this)
+//        operatorOverride.test01()
+
+        testVarValue()
+    }
+
+    fun testVarValue() {
+        val testVarValue = TestVarValue()
+        testVarValue.test01()
     }
 
 }
