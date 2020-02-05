@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.kanlulu.kotlin01.companion.TestCompanion
 import com.kanlulu.kotlin01.extendfunc.TestExtend
+import com.kanlulu.kotlin01.inlinespecial.TestInline
 import com.kanlulu.kotlin01.list.TestKotlinList
 import com.kanlulu.kotlin01.loop.TestKotlinLoop
 import com.kanlulu.kotlin01.operator.TestOperator
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
      * 高阶函数
      * inline关键字 减少创建不必要的对象
      * 过度的使用增加编译器的编译负担，代码块变得庞大；因此我们通常只在高阶函数时使用
+     * inline修饰的函数又叫内联函数
      */
     private inline fun testHighFunc01(isShow: Boolean, testLambda: (String) -> Unit) {
         if (isShow) {
@@ -122,15 +124,28 @@ class MainActivity : AppCompatActivity() {
      * 运算符重载  中缀表达式
      */
     fun testOperatorOverride(view: View) {
+        //中缀表达式
 //        val operatorOverride = TestOperatorOverride(this)
 //        operatorOverride.test01()
 
-        testVarValue()
+        //var val
+//        testVarValue()
+
+        //内联函数 return  crossinline  noinline
+        testInlineSep()
     }
 
+    /**
+     * var val
+     */
     fun testVarValue() {
         val testVarValue = TestVarValue()
         testVarValue.test01()
+    }
+
+    fun testInlineSep(){
+        val testInline = TestInline()
+        testInline.test01()
     }
 
 }
