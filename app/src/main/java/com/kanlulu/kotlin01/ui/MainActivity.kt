@@ -1,17 +1,20 @@
-package com.kanlulu.kotlin01
+package com.kanlulu.kotlin01.ui
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.kanlulu.kotlin01.R
+import com.kanlulu.kotlin01.Utils
 import com.kanlulu.kotlin01.companion.TestCompanion
+import com.kanlulu.kotlin01.coroutine.TestCoroutine
 import com.kanlulu.kotlin01.extendfunc.TestExtend
 import com.kanlulu.kotlin01.inlinespecial.TestInline
 import com.kanlulu.kotlin01.list.TestKotlinList
 import com.kanlulu.kotlin01.loop.TestKotlinLoop
 import com.kanlulu.kotlin01.operator.TestOperator
-import com.kanlulu.kotlin01.operatoroverride.TestOperatorOverride
 import com.kanlulu.kotlin01.scopefunc.TestScopeFunc
 import com.kanlulu.kotlin01.varvalue.TestVarValue
 
@@ -40,7 +43,7 @@ class MainActivity : AppCompatActivity() {
      * JvmStatic
      */
     fun showToast(view: View) {
-        Utils.Test.message("kotlin 单例/匿名内部类", this)
+        Utils.message("kotlin 单例/匿名内部类", this)
     }
 
     /**
@@ -132,7 +135,10 @@ class MainActivity : AppCompatActivity() {
 //        testVarValue()
 
         //内联函数 return  crossinline  noinline
-        testInlineSep()
+//        testInlineSep()
+
+        //协程
+        testCoroutine()
     }
 
     /**
@@ -143,9 +149,22 @@ class MainActivity : AppCompatActivity() {
         testVarValue.test01()
     }
 
-    fun testInlineSep(){
+    fun testInlineSep() {
         val testInline = TestInline()
         testInline.test01()
+    }
+
+    fun testCoroutine() {
+        val testCoroutine = TestCoroutine()
+        testCoroutine.test01()
+    }
+
+    /**
+     * 跳转SecondActivity
+     */
+    fun jumpToSecondActivity(view: View) {
+        val intent = Intent(this, SecondActivity::class.java)
+        startActivity(intent)
     }
 
 }
