@@ -1,9 +1,6 @@
 package com.kanlulu.kotlin01.coroutine
 
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 /**
  * author:kanlulu
@@ -12,12 +9,11 @@ import kotlinx.coroutines.runBlocking
 class TestCoroutine {
 
     public fun test01() = runBlocking<Unit> {
+//        printlnTest()
         val job = launch {
-            repeat(1000) {
-                println("挂起中 $it")
-                delay(500L)
-            }
+           handler1()
         }
+
 
         val job2 = async {
             delay(500L)
@@ -30,5 +26,24 @@ class TestCoroutine {
         println("main:: 主线程等待中...")
         job.cancel()
         println("main:: 即将完成退出")
+    }
+
+    suspend fun handler1(){
+        repeat(1000) {
+            println("挂起中 $it")
+            delay(500L)
+        }
+    }
+
+     suspend fun printlnTest(){
+         //这会阻塞后面代码
+        coroutineScope {
+            launch {
+                repeat(1000) {
+                    println("挂起中... $it")
+                    delay(500L)
+                }
+            }
+        }
     }
 }

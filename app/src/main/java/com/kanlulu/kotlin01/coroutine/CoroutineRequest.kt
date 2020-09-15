@@ -8,10 +8,11 @@ import okhttp3.Request
 /**
  * author:kanlulu
  * data  :2020-02-06 14:27
+ * 协程
  **/
 class CoroutineRequest {
     private val okHttpClient = OkHttpClient()
-    private val request = Request.Builder().url("https://baidu.com").get().build()
+    private val request = Request.Builder().url("https://www.baidu.com").get().build()
 
     fun display(textView: TextView) = runBlocking {
         launch {

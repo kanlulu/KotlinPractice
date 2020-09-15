@@ -14,6 +14,9 @@ class TestKotlinList(private val context: Context) {
 
     }
 
+    /**
+     * ArrayList
+     */
     public fun test01() {
         val list = arrayListOf<Char>('a', 'b', 'c', 'd')
 
@@ -23,16 +26,45 @@ class TestKotlinList(private val context: Context) {
 
         Utils.showToast("$a", context)
 
+        //遍历list集合  不带index
+        for (char in  list){
+
+        }
+
+        //遍历list集合  带index
+        for ((index,char) in list.withIndex()){
+
+        }
     }
 
+    //数组
     public fun test02() {
         val a = arrayOf("4", "0", "7", "i", "f", "w", "0", "9")
         val index = arrayOf(5, 3, 9, 4, 8, 3, 1,9, 2, 1, 7)
+
 
         index.filter { it < a.size }//过滤
             .map { a[it] }//转换
             .reduce { s, s2 -> "$s$s2" }//合并 两个元素合并成一个元素
             .also { Utils.showToast(it, context) }//结果
     }
+
+    /**
+     * map
+     */
+    fun test03(){
+        var list = mutableMapOf("a" to 10,"b" to "c")
+        //map集合遍历 way1
+        list.forEach{
+            it.key
+            it.value
+        }
+
+        //map集合遍历 way2
+        for ((key,value) in list){
+
+        }
+    }
+
 
 }

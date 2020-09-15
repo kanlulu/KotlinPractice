@@ -8,6 +8,7 @@ import kotlin.coroutines.CoroutineContext
 /**
  * author:kanlulu
  * data  :2020-02-06 15:50
+ * 协程
  **/
 class AndroidCommonPool:CoroutineDispatcher() {
     override fun dispatch(context: CoroutineContext, block: Runnable) {

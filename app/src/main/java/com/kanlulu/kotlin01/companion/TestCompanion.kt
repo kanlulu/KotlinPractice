@@ -19,6 +19,7 @@ class TestCompanion {
     }
 
     //Kotlin单例  kotlin使用推荐的单例写法
+    //object对象声明
     private object Holder{
         val instance = TestCompanion()
     }
